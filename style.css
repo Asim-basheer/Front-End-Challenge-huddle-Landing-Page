@@ -398,18 +398,39 @@ footer .container > .logo {
   width: 150px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   footer .container > .logo {
     width: 200px;
+    padding: 20px;
   }
 }
 
 footer .container .box-container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 30px;
+}
+
+@media (max-width: 991px) {
+  footer .container .box-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  footer .container .box-container .location,
+  footer .container .box-container .links,
+  footer .container .box-container .icons {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    padding: 20px;
+  }
+}
+
+footer .container .box-container .location {
+  max-width: 300px;
 }
 
 footer .container .box-container .location .content {
@@ -427,13 +448,6 @@ footer .container .box-container .location .content > img {
 
 footer .container .box-container .location .content > p {
   color: #ebfbff;
-  max-width: 60%;
-}
-
-@media (min-width: 992px) {
-  footer .container .box-container .location .content > p {
-    max-width: 100%;
-  }
 }
 
 footer .container .box-container .links {
@@ -450,12 +464,14 @@ footer .container .box-container .links {
 footer .container .box-container .links > a {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
-  text-align: center;
   color: #ebfbff;
 }
 
-@media (max-width: 767px) {
-  footer .container .box-container .links > a {
+@media (max-width: 991px) {
+  footer .container .box-container .links {
+    gap: 20px;
+  }
+  footer .container .box-container .links a {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     text-align: left;
@@ -467,6 +483,12 @@ footer .container .box-container .icons {
   text-align: center;
   margin: 0 0 20px;
   color: #ebfbff;
+}
+
+@media (max-width: 991px) {
+  footer .container .box-container .icons {
+    margin: 0 auto 20px;
+  }
 }
 
 footer .container .box-container .icons i {
